@@ -11,14 +11,14 @@
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_margin="8dp"
+        android:layout_marginTop="88dp"
         android:background="@drawable/search_view_bg"
-        android:layout_marginTop="108dp"
+        app:iconifiedByDefault="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:queryHint="Search"
-        app:iconifiedByDefault="false"/>
+        app:queryHint="Search" />
 
     <TextView
         android:id="@+id/textView"
@@ -35,7 +35,7 @@
         android:id="@+id/findBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Home"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="690dp" />
 
@@ -43,7 +43,15 @@
         android:id="@+id/findBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Map"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="690dp" />
+
+    <Button
+        android:id="@+id/findBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CarP"
         tools:layout_editor_absoluteX="208dp"
         tools:layout_editor_absoluteY="690dp" />
 
@@ -51,16 +59,10 @@
         android:id="@+id/findBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Pay"
         tools:layout_editor_absoluteX="317dp"
         tools:layout_editor_absoluteY="690dp" />
 
-    <Button
-        android:id="@+id/findBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="105dp"
-        tools:layout_editor_absoluteY="690dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
