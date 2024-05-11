@@ -18,7 +18,7 @@
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:queryHint="Search" />
+        app:queryHint="Search"/>
 
     <TextView
         android:id="@+id/textView"
@@ -29,40 +29,42 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.116" />
+        app:layout_constraintVertical_bias="0.296" />
 
-    <Button
-        android:id="@+id/findBtn"
-        android:layout_width="wrap_content"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/appBar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Home"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="690dp" />
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <Button
-        android:id="@+id/findBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Map"
-        tools:layout_editor_absoluteX="105dp"
-        tools:layout_editor_absoluteY="690dp" />
+        <Button
+            android:id="@+id/homeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home" />
 
-    <Button
-        android:id="@+id/findBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CarP"
-        tools:layout_editor_absoluteX="208dp"
-        tools:layout_editor_absoluteY="690dp" />
+        <Button
+            android:id="@+id/mapBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Map" />
 
-    <Button
-        android:id="@+id/findBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pay"
-        tools:layout_editor_absoluteX="317dp"
-        tools:layout_editor_absoluteY="690dp" />
+        <Button
+            android:id="@+id/carPBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CarP" />
 
+        <Button
+            android:id="@+id/payBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pay" />
 
+    </com.google.android.material.appbar.MaterialToolbar>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
