@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // 在按鈕點擊時執行的操作
                 FindSpecific findSpecific = new FindSpecific();
-                findSpecific.querySpot("南港路");
+                findSpecific.queryParkingLots("南港路");
             }
         });
     }
