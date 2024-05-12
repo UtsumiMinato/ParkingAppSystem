@@ -32,10 +32,13 @@
 
                     <ImageView
                         android:id="@+id/imageView4"
-                        android:layout_width="34dp"
-                        android:layout_height="32dp"
-                        android:layout_marginStart="32dp"
+                        android:layout_width="76dp"
+                        android:layout_height="64dp"
+                        android:layout_marginStart="16dp"
                         android:layout_marginTop="32dp"
+                        android:layout_marginEnd="71dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/textView2"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@android:drawable/ic_dialog_map" />
@@ -44,15 +47,17 @@
                         android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="92dp"
-                        android:text="Parking APP"
+                        android:layout_marginEnd="130dp"
+                        android:layout_marginBottom="24dp"
+                        android:text="Parking"
                         android:textColor="@color/white"
-                        android:textSize="20sp"
+                        android:textSize="25sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/imageView4"
                         app:layout_constraintTop_toTopOf="@+id/imageView4"
-                        app:layout_constraintVertical_bias="1.0" />
+                        app:layout_constraintVertical_bias="0.466" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -67,11 +72,11 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/edittext_background"
-                android:drawableStart="@drawable/search"
+                android:drawableStart="@drawable/search_left_icon"
                 android:drawableEnd="@drawable/microphone"
                 android:drawablePadding="16dp"
                 android:ems="10"
-                android:hint="Search"
+                android:hint="Search Location..."
                 android:inputType="text"
                 android:padding="16dp"
                 android:textColor="@color/white"
@@ -102,7 +107,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"></LinearLayout>
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/home" />
+            </LinearLayout>
         </LinearLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
