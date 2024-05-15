@@ -1,6 +1,6 @@
 package Model;
 
-import Controller.DatabaseConnection;
+import Controller.DatabaseManager;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,36 +13,29 @@ import java.util.Map;
 //user 輸入 keyword 後，使用keyword查詢database的table內相符合的路段。ex:使用者輸入大同路後->SELECT ＊, FROM pork_spot, WHERE parkinglot_address LIKE ?;
 public class FindSpecific {
     String KeyWord;
-    public Map querySpot(String KeyWord){
-        Map <Integer, String> parkingSpot = new HashMap<>();
-//        String parkingSpot = null; //還懶著想怎麼存，先string 測試先
+    Map <Integer, String> parkingSpot = new HashMap<>();
+    public Map queryParkingLots(String keyWord){
         try {
-            // 獲取資料庫連接
-            Connection conn = DatabaseConnection.getConnection();
+            // 獲取databaseManager單例實例
+            DatabaseManager databaseManager = DatabaseManager.getInstance();
 
-            // 準備 SQL 查詢
-            String sql = "SELECT * FROM parkinglots WHERE parkinglot_address LIKE ?";
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, "%" + KeyWord + "%");
+            ResultSet resultSet = databaseManager.querySpot(keyWord);
 
-            // 執行查詢
-            ResultSet rs = pstmt.executeQuery();
+            while (resultSet.next()) {
 
-            // 處理結果
-            while (rs.next()) {
-                int parkinglot_id = rs.getInt("parkinglot_id");
-                String parkinglot_name = rs.getString("parkinglot_name");
+                int parkinglot_id = resultSet.getInt("parkinglot_id");
+                String parkinglot_name = resultSet.getString("parkinglot_name");
 //                System.out.println("ID: " + parkinglot_id + ", Name: " + parkinglot_name);
                 parkingSpot.put(parkinglot_id, parkinglot_name);
             }
 
-            // 關閉資源
-            rs.close();
-            pstmt.close();
-            conn.close();
+
+            resultSet.close();
+            databaseManager.close();
+
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
-    return parkingSpot;
+        return parkingSpot;
     }
 }
