@@ -39,65 +39,38 @@
                     android:layout_height="99dp"
                     android:layout_marginStart="67dp"
                     android:layout_marginEnd="106dp"
-                    android:text="Information"
-                    android:textAllCaps="true"
+                    android:text="Add Line Pay"
                     android:textColor="@color/white"
-                    android:textIsSelectable="false"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/imageView"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:gravity="center_vertical"/>
+                    android:gravity="center_vertical" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
+            <EditText
+                android:id="@+id/editTextText"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/material_grey_900"
-                android:orientation="vertical" />
+                android:layout_height="55dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="250dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/edittext_background"
+                android:drawablePadding="16dp"
+                android:ems="10"
+                android:hint="Line Pay"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="16dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:gravity="center"/>
 
-            <TextView
-                android:id="@+id/textViewParkingTime1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="90dp"
-                android:text="Time"
-                android:textColor="@color/black"
-                android:textSize="50dp" />
-
-            <TextView
-                android:id="@+id/textViewParkingTime2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:text="3hr"
-                android:textColor="@color/black"
-                android:textSize="30dp" />
-
-
-            <TextView
-                android:id="@+id/textViewParkingMoney1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="70dp"
-                android:text="Payable"
-                android:textColor="@color/black"
-                android:textSize="50dp" />
-
-            <TextView
-                android:id="@+id/textViewParkingMoney2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:text="120"
-                android:textColor="@color/black"
-                android:textSize="30dp" />
         </LinearLayout>
+
 
 
     </ScrollView>
@@ -108,13 +81,13 @@
         app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
-
         <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/app_bar"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            app:backgroundTint="@color/white"
             android:layout_gravity="bottom"
-            app:backgroundTint="@color/white">
+            android:id="@+id/app_bar">
+
 
 
             <LinearLayout
