@@ -51,26 +51,32 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="match_parent"
-                android:layout_height="145dp"
-                app:srcCompat="@drawable/baseline_add_24" />
-
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="My Car Plate" />
+                android:gravity="center"
+                android:text="My Car Plate"
+                android:textSize="24dp"
+                android:layout_marginTop="130dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="250dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="70dp"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/baseline_add_24" />
 
             <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_margin="34dp"
+                android:id="@+id/button2"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:text="Confirm"
-                android:layout_gravity="@drawable/rounded_button"
-                android:onClick="onClickButton" />
+                android:layout_marginTop="100dp"
+                android:background="@drawable/edittext_background"
+                android:padding="13dp"/>
         </LinearLayout>
 
 
