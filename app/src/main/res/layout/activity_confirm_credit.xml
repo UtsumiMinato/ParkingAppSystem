@@ -39,15 +39,16 @@
                     android:layout_height="99dp"
                     android:layout_marginStart="67dp"
                     android:layout_marginEnd="106dp"
-                    android:text="Add Credit Card"
+                    android:gravity="center_vertical"
+                    android:text="ADD CREDIT CARD"
                     android:textColor="@color/white"
                     android:textSize="30sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintHorizontal_bias="0.63"
                     app:layout_constraintStart_toEndOf="@+id/imageView"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:gravity="center_vertical" />
+                    app:layout_constraintVertical_bias="0.0" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
@@ -139,14 +140,14 @@
                 </LinearLayout>
 
                 <CheckBox
-                    android:id="@+id/checkBox"
+                    android:id="@+id/Set"
                     android:layout_width="360dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
                     android:text="Set us default" />
 
                 <CheckBox
-                    android:id="@+id/checkBox"
+                    android:id="@+id/Save"
                     android:layout_width="360dp"
                     android:layout_height="wrap_content"
                     android:text="Save card details" />
@@ -201,7 +202,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView5"
+                        android:id="@+id/Home"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="center"
@@ -209,7 +210,7 @@
                         app:srcCompat="@drawable/baseline_home_24" />
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/Home1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Home"
@@ -223,29 +224,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView5"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="8dp"
-                        app:srcCompat="@drawable/baseline_location_on_24" />
-
-                    <TextView
-                        android:id="@+id/textView5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Map"
-                        android:textAlignment="center" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView5"
+                        android:id="@+id/CarPlate"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="center"
@@ -253,7 +232,7 @@
                         app:srcCompat="@drawable/baseline_add_box_24" />
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/CarPlate1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Car Plate"
@@ -267,7 +246,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView5"
+                        android:id="@+id/Payment"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="center"
@@ -275,12 +254,13 @@
                         app:srcCompat="@drawable/baseline_payment_24" />
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/Payment1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Payment"
                         android:textAlignment="center" />
                 </LinearLayout>
+
             </LinearLayout>
         </com.google.android.material.bottomappbar.BottomAppBar>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
