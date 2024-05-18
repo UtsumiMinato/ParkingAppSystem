@@ -47,7 +47,7 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/imageView"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
+                    android:gravity="center_vertical" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
@@ -61,24 +61,27 @@
                 android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="60dp"
                 android:text=" Select Payment"
                 android:textColor="@color/black"
-                android:textSize="30sp" />
+                android:textSize="30dp" />
 
             <ImageButton
                 android:id="@+id/imageButtonClickableImage1"
                 android:layout_width="420dp"
                 android:layout_height="100dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="70dp"
                 android:src="@drawable/Linepay"
+                android:background="@android:color/transparent"
                 android:scaleType="fitCenter" />
 
             <ImageButton
                 android:id="@+id/imageButtonClickableImage2"
                 android:layout_width="420dp"
                 android:layout_height="100dp"
-                android:src="@drawable/visa"
+                android:layout_marginTop="60dp"
+                android:src="@drawable/rF1xjCh"
+                android:background="@android:color/transparent"
                 android:scaleType="fitCenter" />
 
         </LinearLayout>
