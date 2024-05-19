@@ -47,7 +47,6 @@
                         android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="90dp"
                         android:layout_marginBottom="24dp"
                         android:text="Group 5 "
                         android:textColor="@color/white"
@@ -55,13 +54,19 @@
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/imageView4"
+                        app:layout_constraintHorizontal_bias="0.498"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/imageView4"
-                        app:layout_constraintVertical_bias="0.545" />
+                        app:layout_constraintVertical_bias="0.8" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" />
 
             <EditText
                 android:id="@+id/editTextText"
@@ -81,8 +86,17 @@
                 android:padding="16dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white" />
+
         </LinearLayout>
     </ScrollView>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -111,7 +125,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView5"
+                    android:id="@+id/Home"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_gravity="center"
@@ -119,7 +133,7 @@
                     app:srcCompat="@drawable/baseline_home_24" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/Home1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Home"
@@ -133,29 +147,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="8dp"
-                    app:srcCompat="@drawable/baseline_location_on_24" />
-
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Map"
-                    android:textAlignment="center" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.25"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/imageView5"
+                    android:id="@+id/CarPlate"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_gravity="center"
@@ -163,7 +155,7 @@
                     app:srcCompat="@drawable/baseline_add_box_24" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/CarPlate1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Car Plate"
@@ -177,7 +169,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView5"
+                    android:id="@+id/Payment"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_gravity="center"
@@ -185,7 +177,7 @@
                     app:srcCompat="@drawable/baseline_payment_24" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/Payment1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Payment"

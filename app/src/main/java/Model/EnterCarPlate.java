@@ -30,8 +30,8 @@ public class EnterCarPlate {
     }
 
     //test
-    public static void main(Strimg[] args){
+    public static void main(String[] args){
         EnterCarPlate enterCarPlate = new EnterCarPlate();
-        enterCarPlate.enterCarPlateNumber("PPP111");
+        enterCarPlate.enterCarPlateNumber("PPP1111");
     }
 }
