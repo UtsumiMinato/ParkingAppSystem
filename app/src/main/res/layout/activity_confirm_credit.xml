@@ -91,7 +91,7 @@
                         android:layout_marginStart="1dp"
                         android:layout_marginTop="1dp"
                         android:background="@android:color/transparent"
-                        android:src="@drawable/baseline_photo_camera_24" />
+                        android:src="@drawable/scan" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -137,6 +137,13 @@
 
                     </LinearLayout>
 
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
                 </LinearLayout>
 
                 <CheckBox
@@ -167,13 +174,6 @@
         </LinearLayout>
 
     </ScrollView>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"

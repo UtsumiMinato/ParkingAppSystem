@@ -40,7 +40,7 @@
                     android:layout_marginStart="67dp"
                     android:layout_marginEnd="106dp"
                     android:gravity="center_vertical"
-                    android:text="SELECT CREDIT CARD"
+                    android:text="SELECT"
                     android:textColor="@color/white"
                     android:textSize="30sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -51,29 +51,102 @@
                     app:layout_constraintVertical_bias="0.0" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <EditText
-                android:id="@+id/editTextText"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="250dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/edittext_background"
-                android:drawablePadding="16dp"
-                android:ems="10"
-                android:gravity="center"
-                android:hint="Line Pay"
-                android:inputType="text"
-                android:maxLines="1"
-                android:padding="16dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="8dp"
+                    android:text="Select Credit Card"
+                    android:textSize="30sp"
+                    android:layout_marginTop="20dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:layout_marginTop="30dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/master" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Master •••• 1111"
+                        android:paddingStart="16dp"
+                        android:textColor="@color/black"/>
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/baseline_arrow_forward_ios_24" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/visa" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Visa •••• 0000"
+                        android:paddingStart="16dp"
+                        android:textColor="@color/black"/>
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/baseline_arrow_forward_ios_24" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="7dp">
+
+                    <TextView
+                        android:layout_width="175dp"
+                        android:layout_height="wrap_content"
+                        android:text="+ Add a new credit card"
+                        android:layout_marginTop="7dp"
+                        android:background="@drawable/rounded_grey_background"
+                        android:padding="10dp" />
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
-
-
-
     </ScrollView>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -82,14 +155,13 @@
         app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+
         <com.google.android.material.bottomappbar.BottomAppBar
             android:layout_width="match_parent"
             android:layout_height="60dp"
             app:backgroundTint="@color/white"
             android:layout_gravity="bottom"
             android:id="@+id/app_bar">
-
-
 
             <LinearLayout
                 android:layout_width="match_parent"

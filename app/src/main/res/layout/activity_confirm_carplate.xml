@@ -67,16 +67,17 @@
                 android:layout_marginTop="60dp"
                 android:text="Time"
                 android:textColor="@color/black"
-                android:textSize="50dp" />
+                android:textSize="30dp" />
 
             <EditText
                 android:layout_width="150dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="20dp"
-                android:background="@drawable/edittext_background"
+                android:background="@color/silver"
                 android:paddingRight="10dp"
                 android:text="hr"
+                android:textSize="25dp"
                 android:gravity="right|center_vertical" />
 
             <TextView
@@ -84,19 +85,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="60dp"
                 android:text="Payable"
                 android:textColor="@color/black"
-                android:textSize="50dp" />
+                android:textSize="30dp" />
 
             <EditText
                 android:layout_width="150dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="20dp"
-                android:background="@drawable/edittext_background"
+                android:background="@color/silver"
                 android:drawableLeft="@drawable/baseline_attach_money_24"
-                android:paddingLeft="20dp" />
+                android:paddingLeft="10dp" />
 
             <Button
                 android:id="@+id/button2"
@@ -104,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="Pay"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="60dp"
                 android:background="@drawable/edittext_background"
                 android:padding="13dp"/>
         </LinearLayout>
