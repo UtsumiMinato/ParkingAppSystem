@@ -40,139 +40,39 @@
                     android:layout_marginStart="67dp"
                     android:layout_marginEnd="106dp"
                     android:gravity="center_vertical"
-                    android:text="ADD PAYMENT"
+                    android:text="QR CODE"
+                    android:textAllCaps="true"
                     android:textColor="@color/white"
-                    android:textSize="30sp"
+                    android:textIsSelectable="false"
+                    android:textSize="30dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.661"
+                    app:layout_constraintHorizontal_bias="0.321"
                     app:layout_constraintStart_toEndOf="@+id/imageView"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:gravity="center"
+                android:layout_marginTop="160dp">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="8dp"
-                    android:text="Payment Method"
-                    android:textSize="30dp"
-                    android:layout_marginTop="20dp"
-                    android:textColor="@color/black"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="8dp"
-                    android:layout_marginTop="30dp">
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/line" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Line Pay"
-                        android:paddingStart="16dp"
-                        android:textColor="@color/black"/>
-
-                    <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:src="@drawable/baseline_arrow_forward_ios_24" />
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/grey" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/visa" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Visa •••• 0000"
-                        android:paddingStart="16dp"
-                        android:textColor="@color/black"/>
-
-                    <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:src="@drawable/baseline_arrow_forward_ios_24" />
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/grey" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/cash" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Cash"
-                        android:paddingStart="16dp"
-                        android:textColor="@color/black"/>
-
-                    <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:src="@drawable/baseline_arrow_forward_ios_24" />
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/grey" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="8dp">
-
-                    <TextView
-                        android:layout_width="175dp"
-                        android:layout_height="wrap_content"
-                        android:text="+ New Payment Method"
-                        android:background="@drawable/rounded_grey_background"
-                        android:layout_marginTop="7dp"
-                        android:padding="10dp"/>
-                </LinearLayout>
+                <ImageView
+                    android:id="@+id/QRCodeImageView"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/baseline_qr_code_2_24" />
             </LinearLayout>
+
+
         </LinearLayout>
+
     </ScrollView>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -183,11 +83,12 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/app_bar"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            app:backgroundTint="@color/white"
             android:layout_gravity="bottom"
-            android:id="@+id/app_bar">
+            app:backgroundTint="@color/white">
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -259,6 +160,7 @@
                         android:text="Payment"
                         android:textAlignment="center" />
                 </LinearLayout>
+
             </LinearLayout>
         </com.google.android.material.bottomappbar.BottomAppBar>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
