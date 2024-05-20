@@ -14,6 +14,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [GOOGLE_MAPS_API_KEY: GoogleMapsApiKey]
     }
 
     buildTypes {
@@ -32,6 +34,8 @@ android {
 dependencies {
     // https://mvnrepository.com/artifact/org.postgresql/postgresql
     implementation 'org.postgresql:postgresql:42.1.4'
+    // https://mvnrepository.com/artifact/com.google.android.gms/play-services-maps
+    implementation 'com.google.android.gms:play-services-maps:17.0.1'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
