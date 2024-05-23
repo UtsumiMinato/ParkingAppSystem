@@ -55,6 +55,56 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:paddingStart="18dp"
+                android:paddingEnd="3dp">
+
+                <TextView
+                    android:id="@+id/textViewParkingLotName"
+                    android:layout_width="296dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:text="Group 5 Parking Lot"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/textViewParkingLotID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:text="ID: 10"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:layout_weight="0.5"
+                android:background="@color/silver">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center_horizontal"
+                    android:text="ABC-1234"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/material_grey_900"
                 android:orientation="vertical" />
@@ -64,7 +114,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="30dp"
                 android:text="Time"
                 android:textColor="@color/black"
                 android:textSize="30dp" />
@@ -75,17 +125,17 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="20dp"
                 android:background="@color/silver"
+                android:gravity="right|center_vertical"
                 android:paddingRight="10dp"
                 android:text="hr"
-                android:textSize="25dp"
-                android:gravity="right|center_vertical" />
+                android:textSize="25dp" />
 
             <TextView
                 android:id="@+id/textViewParkingMoney1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="10dp"
                 android:text="Payable"
                 android:textColor="@color/black"
                 android:textSize="30dp" />
@@ -105,7 +155,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="Pay"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="40dp"
                 android:background="@drawable/edittext_background"
                 android:padding="13dp"/>
         </LinearLayout>
