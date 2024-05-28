@@ -33,6 +33,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import com.example.parkingapp.databinding.ActivityMainBinding;
+import androidx.fragment.app.Fragment;
+
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -49,17 +54,52 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private GoogleMap mMap;
     private FusedLocationProviderClient mFusedLocationProviderClient;
     private final static int LOCATION_PERMISSION_REQUEST_CODE = 1;
+    private ActivityMainBinding binding;
+
+    private MapsFragment fragmentMap;
 
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
-        setContentView(R.layout.activity_main);
+        setContentView(binding.getRoot());
 
+        //主Fragment 管理
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentMap = new MapsFragment();
+        fragmentTransaction.add(R.id.fragment_test,fragmentMap,"Map");
+        fragmentTransaction.show(fragmentMap);
+        fragmentTransaction.commit();
+
+        //管理nav
+        // 设置底部导航监听器
+        binding.navigation.setOnItemSelectedListener(item -> {
+            Fragment selectedFragment = null;
+            switch (item.getItemId()) {
+                case R.id.nav_home:
+                    selectedFragment = new MapsFragment();
+                    break;
+                case R.id.nav_car_plate:
+                    selectedFragment = new CarPlateFragment();
+                    break;
+                case R.id.nav_payment:
+                    selectedFragment = new PaymentFragment();
+                    break;
+            }
+            if (selectedFragment != null) {
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_test, selectedFragment)
+                        .commit();
+            }
+            return true;
+        });
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -107,6 +147,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 //        }
     }
 
+
+
 //    private void filterList(String text) {
 //        List<Item> filteredList = new ArrayList<>();
 //        for (Item item : itemList) {
@@ -121,7 +163,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 //            // Update the UI with the filtered list
 //        }
 //    }
-
     private void startVoiceInput() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
