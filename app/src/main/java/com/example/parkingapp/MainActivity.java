@@ -98,16 +98,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                         .replace(R.id.fragment_test, selectedFragment)
                         .commit();
             }
-            return true; // 表示已处理点击事件
+            return true;
         });
-
-        // 默认显示首个 Fragment
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_test, new MapsFragment())
-                    .commit();
-        }
-
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -155,6 +147,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 //        }
     }
 
+
+
 //    private void filterList(String text) {
 //        List<Item> filteredList = new ArrayList<>();
 //        for (Item item : itemList) {
@@ -169,7 +163,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 //            // Update the UI with the filtered list
 //        }
 //    }
-
     private void startVoiceInput() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
