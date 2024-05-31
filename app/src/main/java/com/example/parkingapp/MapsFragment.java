@@ -25,6 +25,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.CameraPosition;
 
 import java.io.IOException;
 import java.util.List;
@@ -88,6 +89,14 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
             googleMap.moveCamera(CameraUpdateFactory.zoomTo(15));
             // Display traffic.
             googleMap.setTrafficEnabled(true);
+
+            //設定預設北方朝上
+            CameraPosition cameraPosition = new CameraPosition.Builder()
+                    .target(kyoto)
+                    .zoom(15)
+                    .bearing(0)  // 北方
+                    .build();
+            googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
         }
     }
 
@@ -103,7 +112,12 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
                         double longitude = location.getLongitude();
                         Log.d("Location", "Current location: Latitude " + latitude + ", Longitude " + longitude);
                         LatLng currentLocation = new LatLng(latitude, longitude);
-                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, 15));
+                        CameraPosition cameraPosition = new CameraPosition.Builder()
+                                .target(currentLocation)
+                                .zoom(15)
+                                .bearing(0)  //北方
+                                .build();
+                        mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                         mMap.addMarker(new MarkerOptions().position(currentLocation).title("Current Location"));
                     } else {
                         Log.d("Location", "No location retrieved");
@@ -122,8 +136,13 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
                 Address address = addresses.get(0);
                 LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
                 mMap.clear();
+                CameraPosition cameraPosition = new CameraPosition.Builder()
+                        .target(latLng)
+                        .zoom(12)
+                        .bearing(0)  //北方
+                        .build();
+                mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                 mMap.addMarker(new MarkerOptions().position(latLng).title(location));
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12));
             } else {
                 Log.d("Location", "Location not found: " + location);
             }
