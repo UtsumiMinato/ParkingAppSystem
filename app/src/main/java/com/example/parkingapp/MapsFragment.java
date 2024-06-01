@@ -179,7 +179,12 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
                 .addOnSuccessListener(location -> {
                     if (location != null) {
                         LatLng currentLocation = new LatLng(location.getLatitude(), location.getLongitude());
-                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, 15));
+                        CameraPosition cameraPosition = new CameraPosition.Builder()
+                                .target(currentLocation)
+                                .zoom(15)
+                                .bearing(0) // 北方朝上
+                                .build();
+                        mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                         mMap.addMarker(new MarkerOptions().position(currentLocation).title("Current Location"));
                     } else {
                         Toast.makeText(getContext(), "Current location not found", Toast.LENGTH_LONG).show();
@@ -190,4 +195,5 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
                     Toast.makeText(getContext(), "Error trying to get current location", Toast.LENGTH_LONG).show();
                 });
     }
+
 }
