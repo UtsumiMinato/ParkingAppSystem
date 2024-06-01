@@ -96,6 +96,7 @@
                 android:text="Confirm"
                 android:layout_marginTop="120dp"
                 android:background="@drawable/edittext_background"
+                android:textColor="@color/white"
                 android:padding="13dp" />
         </LinearLayout>
     </ScrollView>
