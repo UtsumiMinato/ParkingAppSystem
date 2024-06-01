@@ -78,24 +78,6 @@
                             android:paddingBottom="0dp"
                             android:textSize="14sp"
                             android:gravity="center_vertical|start"/>
-
-<!--                        <ImageView-->
-<!--                            android:layout_width="24dp"-->
-<!--                            android:layout_height="24dp"-->
-<!--                            android:src="@drawable/line" />-->
-
-<!--                        <TextView-->
-<!--                            android:layout_width="0dp"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_weight="1"-->
-<!--                            android:text="Line Pay"-->
-<!--                            android:paddingStart="16dp"-->
-<!--                            android:textColor="@color/black"/>-->
-
-<!--                        <ImageView-->
-<!--                            android:layout_width="18dp"-->
-<!--                            android:layout_height="18dp"-->
-<!--                            android:src="@drawable/baseline_arrow_forward_ios_24" />-->
                     </LinearLayout>
 
                     <View
@@ -113,7 +95,7 @@
                         <Button
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="Visa •••• 0000"
+                            android:text="Visa •••• 5075"
                             android:drawableLeft="@drawable/visa"
                             android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
                             android:textColor="@color/black"
@@ -124,25 +106,6 @@
                             android:paddingBottom="0dp"
                             android:textSize="14sp"
                             android:gravity="center_vertical"/>
-
-
-<!--                        <ImageView-->
-<!--                            android:layout_width="24dp"-->
-<!--                            android:layout_height="24dp"-->
-<!--                            android:src="@drawable/visa" />-->
-
-<!--                        <TextView-->
-<!--                            android:layout_width="0dp"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_weight="1"-->
-<!--                            android:text="Visa •••• 0000"-->
-<!--                            android:paddingStart="16dp"-->
-<!--                            android:textColor="@color/black"/>-->
-
-<!--                        <ImageView-->
-<!--                            android:layout_width="18dp"-->
-<!--                            android:layout_height="18dp"-->
-<!--                            android:src="@drawable/baseline_arrow_forward_ios_24" />-->
                     </LinearLayout>
 
                     <View
@@ -185,6 +148,7 @@
                         android:padding="8dp">
 
                         <Button
+                            android:id="@+id/button_add_payment_method"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="+ New Payment Method"
