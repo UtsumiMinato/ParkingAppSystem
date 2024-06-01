@@ -153,6 +153,7 @@
                             android:layout_height="wrap_content"
                             android:text="+ New Payment Method"
                             android:background="@drawable/rounded_grey_background"
+                            android:textColor="@color/white"
                             android:textSize="12sp"
                             android:layout_marginTop="7dp"
                             android:padding="10dp"/>
