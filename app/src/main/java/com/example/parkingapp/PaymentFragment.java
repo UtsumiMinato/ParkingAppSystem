@@ -3,16 +3,15 @@ package com.example.parkingapp;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.os.Bundle;
 import android.os.Handler;
-
-import androidx.fragment.app.FragmentStatePagerAdapter;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -83,6 +82,22 @@ public class PaymentFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_payment, container, false);
         viewPager = view.findViewById(R.id.text_carousel_viewpager);
         initializeViewPager();
+        Button button = view.findViewById(R.id.button_add_payment_method);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment newFragment = new ConfirmCeditFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+
+                // Replace whatever is in the fragment_container view with this fragment,
+                // and add the transaction to the back stack if needed
+                transaction.replace(R.id.fragment_test, newFragment);
+                transaction.addToBackStack(null);
+
+                // Commit the transaction
+                transaction.commit();
+            }
+        });
         return view;
     }
 
