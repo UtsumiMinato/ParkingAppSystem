@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
-import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -30,7 +29,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.maps.android.clustering.ClusterManager;
 import com.google.android.gms.maps.model.LatLngBounds;
-
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -66,6 +64,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
         super.onViewCreated(view, savedInstanceState);
         searchView = view.findViewById(R.id.idSearchView);
         mLocationClient = LocationServices.getFusedLocationProviderClient(getActivity());
+
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         if (mapFragment != null) {
             mapFragment.getMapAsync(this);
@@ -98,22 +97,21 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
 
     private void checkLocationPermission() {
         if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION)) {
-                new AlertDialog.Builder(getContext())
-                        .setTitle("Location Permission Needed")
-                        .setMessage("This app needs the Location permission, please accept to use location functionality")
-                        .setPositiveButton("OK", (dialogInterface, i) -> {
-                            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_PERMISSION_REQUEST_CODE);
-                        })
-                        .create()
-                        .show();
-            } else {
-                ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_PERMISSION_REQUEST_CODE);
-            }
-        } else {
-            mMap.setMyLocationEnabled(true);
-            getDeviceLocation();
+            // 預設位置台北
+            LatLng taipei = new LatLng(25.0330, 121.5654);
+            CameraPosition cameraPosition = new CameraPosition.Builder()
+                    .target(taipei)
+                    .zoom(15)
+                    .bearing(0) // 北方朝上
+                    .build();
+            mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+            mMap.addMarker(new MarkerOptions().position(taipei).title("Default Location: Taipei"));
+
+            return;
         }
+
+        mMap.setMyLocationEnabled(true);
+        getDeviceLocation();
     }
 
     private void setUpClusterer() {
@@ -143,7 +141,12 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
                     builder.include(location);
                 }
                 LatLngBounds bounds = builder.build();
-                mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 100));
+                CameraPosition cameraPosition = new CameraPosition.Builder()
+                        .target(bounds.getCenter())
+                        .zoom(mMap.getCameraPosition().zoom)
+                        .bearing(0) // 北方朝上
+                        .build();
+                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
             }
         } else {
             Geocoder geocoder = new Geocoder(getContext());
@@ -168,7 +171,6 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
             }
         }
     }
-
 
     private void getDeviceLocation() {
         if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -195,5 +197,4 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
                     Toast.makeText(getContext(), "Error trying to get current location", Toast.LENGTH_LONG).show();
                 });
     }
-
 }
