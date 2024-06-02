@@ -60,28 +60,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-<!--        <EditText-->
-<!--            android:id="@+id/idSearchView"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="32dp"-->
-<!--            android:layout_marginStart="32dp"-->
-<!--            android:layout_marginEnd="32dp"-->
-<!--            android:layout_marginBottom="16dp"-->
-<!--            android:background="@drawable/edittext_background"-->
-<!--            android:drawableStart="@drawable/baseline_location_pin_24"-->
-<!--            android:drawableEnd="@drawable/baseline_mic_24"-->
-<!--            android:drawablePadding="16dp"-->
-<!--            android:ems="10"-->
-<!--            android:hint="Search Location..."-->
-<!--            android:inputType="text"-->
-<!--            android:padding="16dp"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:textColorHint="@color/white"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/header"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent" />-->
-
         <androidx.appcompat.widget.SearchView
             android:id="@+id/idSearchView"
             android:layout_width="0dp"
@@ -98,5 +76,64 @@
             app:layout_constraintTop_toBottomOf="@id/header"
             app:queryHint="Search Location..." />
 
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/idSearchView">
+
+            <LinearLayout
+                android:id="@+id/bottom_sheet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:elevation="16dp"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+                <TextView
+                    android:id="@+id/parking_lot_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Parking Lot Name"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/parking_lot_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address" />
+
+                <TextView
+                    android:id="@+id/parking_lot_available"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Available Slots" />
+
+                <TextView
+                    android:id="@+id/parking_lot_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Slots"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/parking_lot_manager_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Manager Name"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/parking_lot_manager_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Manager Phone"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
