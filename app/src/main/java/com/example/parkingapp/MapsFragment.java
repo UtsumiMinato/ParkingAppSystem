@@ -17,6 +17,8 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.appcompat.widget.SearchView;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import android.content.Context;
+import android.view.inputmethod.InputMethodManager;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -116,6 +118,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 searchLocation(query);
+                hideKeyboard();
                 return true;
             }
 
@@ -265,14 +268,23 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
     }
 
     private void showParkingLotDetails(MapClusterItem item) {
-        parkingLotName.setText(item.getTitle());
-        parkingLotAddress.setText(item.getAddress());
-        parkingLotAvailable.setText(String.valueOf(item.getAvailable()));
-        parkingLotTotal.setText(String.valueOf(item.getTotal()));
-        parkingLotManagerName.setText(item.getManagerName());
-        parkingLotManagerPhone.setText(item.getManagerPhone());
+        parkingLotName.setText("Name: " + item.getTitle());
+        parkingLotAddress.setText("Address: " + item.getAddress());
+        parkingLotAvailable.setText("Available: " + item.getAvailable());
+        parkingLotTotal.setText("Total: " + item.getTotal());
+        parkingLotManagerName.setText("Admin Name: " + item.getManagerName());
+        parkingLotManagerPhone.setText("Admin Phone: " + item.getManagerPhone());
 
         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED); // 只設置為 COLLAPSED
+    }
+
+
+    private void hideKeyboard() {
+        View view = getActivity().getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 
 }
