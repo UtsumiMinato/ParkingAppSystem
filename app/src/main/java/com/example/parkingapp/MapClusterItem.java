@@ -7,11 +7,21 @@ public class MapClusterItem implements ClusterItem {
     private final LatLng position;
     private final String title;
     private final String snippet;
+    private final String address;
+    private final int available;
+    private final int total;
+    private final String managerName;
+    private final String managerPhone;
 
-    public MapClusterItem(LatLng position, String title, String snippet) {
+    public MapClusterItem(LatLng position, String title, String snippet, String address, int available, int total, String managerName, String managerPhone) {
         this.position = position;
         this.title = title;
         this.snippet = snippet;
+        this.address = address;
+        this.available = available;
+        this.total = total;
+        this.managerName = managerName;
+        this.managerPhone = managerPhone;
     }
 
     @Override
@@ -28,4 +38,25 @@ public class MapClusterItem implements ClusterItem {
     public String getSnippet() {
         return snippet;
     }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public int getAvailable() {
+        return available;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public String getManagerName() {
+        return managerName;
+    }
+
+    public String getManagerPhone() {
+        return managerPhone;
+    }
 }
+
