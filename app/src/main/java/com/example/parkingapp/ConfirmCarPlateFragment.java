@@ -3,17 +3,20 @@ package com.example.parkingapp;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link fragment_select_credit#newInstance} factory method to
+ * Use the {@link ConfirmCarPlateFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class fragment_select_credit extends Fragment {
+public class ConfirmCarPlateFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +27,7 @@ public class fragment_select_credit extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public fragment_select_credit() {
+    public ConfirmCarPlateFragment() {
         // Required empty public constructor
     }
 
@@ -34,11 +37,11 @@ public class fragment_select_credit extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment fragment_select_credit.
+     * @return A new instance of fragment confirm_carplate.
      */
     // TODO: Rename and change types and number of parameters
-    public static fragment_select_credit newInstance(String param1, String param2) {
-        fragment_select_credit fragment = new fragment_select_credit();
+    public static ConfirmCarPlateFragment newInstance(String param1, String param2) {
+        ConfirmCarPlateFragment fragment = new ConfirmCarPlateFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -58,7 +61,24 @@ public class fragment_select_credit extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_select_credit, container, false);
+        View view = inflater.inflate(R.layout.fragment_confirm_carplate, container, false);
+
+        Button button = view.findViewById(R.id.pay_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment newFragment = new ConfirmCeditFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+
+                // Replace whatever is in the fragment_container view with this fragment,
+                // and add the transaction to the back stack if needed
+                transaction.replace(R.id.fragment_test, newFragment);
+                transaction.addToBackStack(null);
+
+                // Commit the transaction
+                transaction.commit();
+            }
+        });
+        return view;
     }
 }

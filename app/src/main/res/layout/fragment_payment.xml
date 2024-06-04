@@ -7,165 +7,165 @@
     tools:context=".PaymentFragment">
 
     <!-- TODO: Update blank fragment layout -->
-        <ScrollView
-            android:id="@+id/scrollView2"
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/material_grey_900">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="99dp"
+                    android:layout_marginEnd="104dp"
+                    android:gravity="center_vertical"
+                    android:text="ADD PAYMENT"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="16dp">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/material_grey_900">
-
-                    <TextView
-                        android:id="@+id/textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="99dp"
-                        android:layout_marginEnd="104dp"
-                        android:gravity="center_vertical"
-                        android:text="ADD PAYMENT"
-                        android:textColor="@color/white"
-                        android:textSize="30sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingBottom="8dp"
+                    android:text="Payment Method"
+                    android:textColor="@color/black"
+                    android:textSize="30dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp">
 
-                    <TextView
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/line_pay"
+                        android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
+                        android:gravity="center_vertical|start"
+                        android:paddingStart="0dp"
+                        android:paddingTop="0dp"
+                        android:paddingEnd="0dp"
+                        android:paddingBottom="0dp"
+                        android:text="Line Pay"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/visa"
+                        android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
+                        android:gravity="center_vertical"
+                        android:paddingStart="0dp"
+                        android:paddingTop="0dp"
+                        android:paddingEnd="0dp"
+                        android:paddingBottom="0dp"
+                        android:text="Visa •••• 5075"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/cash"
+                        android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
+                        android:gravity="center_vertical|start"
+                        android:paddingStart="0dp"
+                        android:paddingTop="0dp"
+                        android:paddingEnd="0dp"
+                        android:paddingBottom="0dp"
+                        android:text="Cash"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+
+                    <Button
+                        android:id="@+id/button_add_payment_method"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:background="@drawable/rounded_grey_background"
+                        android:padding="10dp"
+                        android:text="+ New Payment Method"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/text_carousel_viewpager"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingBottom="8dp"
-                        android:text="Payment Method"
-                        android:textSize="30dp"
-                        android:layout_marginTop="20dp"
-                        android:textColor="@color/black"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingStart="8dp"
-                        android:paddingEnd="8dp"
-                        android:layout_marginTop="30dp">
-
-                        <Button
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="Line Pay"
-                            android:drawableLeft="@drawable/line_pay"
-                            android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
-                            android:textColor="@color/black"
-                            android:background="@android:color/transparent"
-                            android:paddingEnd="0dp"
-                            android:paddingStart="0dp"
-                            android:paddingTop="0dp"
-                            android:paddingBottom="0dp"
-                            android:textSize="14sp"
-                            android:gravity="center_vertical|start"/>
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/grey" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingStart="8dp"
-                        android:paddingEnd="8dp">
-
-                        <Button
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="Visa •••• 5075"
-                            android:drawableLeft="@drawable/visa"
-                            android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
-                            android:textColor="@color/black"
-                            android:background="@android:color/transparent"
-                            android:paddingEnd="0dp"
-                            android:paddingStart="0dp"
-                            android:paddingTop="0dp"
-                            android:paddingBottom="0dp"
-                            android:textSize="14sp"
-                            android:gravity="center_vertical"/>
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/grey" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingStart="8dp"
-                        android:paddingEnd="8dp">
-
-                        <Button
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@android:color/transparent"
-                            android:drawableLeft="@drawable/cash"
-                            android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
-                            android:gravity="center_vertical|start"
-                            android:paddingStart="0dp"
-                            android:paddingTop="0dp"
-                            android:paddingEnd="0dp"
-                            android:paddingBottom="0dp"
-                            android:text="Cash"
-                            android:textColor="@color/black"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/grey" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="8dp">
-
-                        <Button
-                            android:id="@+id/button_add_payment_method"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="+ New Payment Method"
-                            android:background="@drawable/rounded_grey_background"
-                            android:textColor="@color/white"
-                            android:textSize="12sp"
-                            android:layout_marginTop="7dp"
-                            android:padding="10dp"/>
-
-                        <androidx.viewpager.widget.ViewPager
-                            android:id="@+id/text_carousel_viewpager"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp" />
-                    </LinearLayout>
+                        android:layout_marginTop="16dp" />
                 </LinearLayout>
             </LinearLayout>
-        </ScrollView>
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>
