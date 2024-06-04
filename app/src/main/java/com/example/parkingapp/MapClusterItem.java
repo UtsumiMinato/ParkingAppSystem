@@ -9,18 +9,16 @@ public class MapClusterItem implements ClusterItem {
     private final String snippet;
     private final String address;
     private final int available;
-    private final int price;
     private final int total;
     private final String managerName;
     private final String managerPhone;
 
-    public MapClusterItem(LatLng position, String title, String snippet, String address, int available,int Price, int total, String managerName, String managerPhone) {
+    public MapClusterItem(LatLng position, String title, String snippet, String address, int available, int total, String managerName, String managerPhone) {
         this.position = position;
         this.title = title;
         this.snippet = snippet;
         this.address = address;
         this.available = available;
-        this.price = Price;
         this.total = total;
         this.managerName = managerName;
         this.managerPhone = managerPhone;
@@ -47,10 +45,6 @@ public class MapClusterItem implements ClusterItem {
 
     public int getAvailable() {
         return available;
-    }
-
-    public int getPrice() {
-        return price;
     }
 
     public int getTotal() {
