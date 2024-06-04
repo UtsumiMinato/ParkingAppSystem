@@ -139,6 +139,15 @@
                     android:text="Manager Phone"
                     android:visibility="gone" />
 
+                <Button
+                    android:id="@+id/btnNavigate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Navigate"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/design_default_color_primary"
+                    android:textColor="@android:color/white" />
+
             </LinearLayout>
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
