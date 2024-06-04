@@ -113,6 +113,12 @@
                     android:text="Available Slots" />
 
                 <TextView
+                    android:id="@+id/parking_lot_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Price" />
+
+                <TextView
                     android:id="@+id/parking_lot_total"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

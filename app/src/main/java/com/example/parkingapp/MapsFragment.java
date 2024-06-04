@@ -17,6 +17,8 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.appcompat.widget.SearchView;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import android.content.Context;
+import android.view.inputmethod.InputMethodManager;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -45,7 +47,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
     private FusedLocationProviderClient mLocationClient;
     private List<LatLng> predefinedLocations;
     private BottomSheetBehavior<View> bottomSheetBehavior;
-    private TextView parkingLotName, parkingLotAddress, parkingLotAvailable, parkingLotTotal, parkingLotManagerName, parkingLotManagerPhone;
+    private TextView parkingLotName, parkingLotAddress, parkingLotAvailable, parkingLotPrice, parkingLotTotal, parkingLotManagerName, parkingLotManagerPhone;
 
     @Nullable
     @Override
@@ -116,6 +118,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 searchLocation(query);
+                hideKeyboard();
                 return true;
             }
 
@@ -176,12 +179,12 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
     }
 
     private void addItems() {
-        mClusterManager.addItem(new MapClusterItem(new LatLng(23.69240510302933, 120.54115858531878), "停車場 1", "描述", "地址 1", 10, 50, "管理者 1", "123456789"));
-        mClusterManager.addItem(new MapClusterItem(new LatLng(23.69589083905699, 120.52695418898324), "停車場 2", "描述", "地址 2", 5, 30, "管理者 2", "987654321"));
-        mClusterManager.addItem(new MapClusterItem(new LatLng(23.697305531011292, 120.52502299857244), "停車場 3", "描述", "地址 3", 0, 20, "管理者 3", "111222333"));
-        mClusterManager.addItem(new MapClusterItem(new LatLng(23.697619904919158, 120.52751208843522), "停車場 4", "描述", "地址 4", 20, 100, "管理者 4", "444555666"));
-        mClusterManager.addItem(new MapClusterItem(new LatLng(23.701588810386625, 120.53150321528412), "停車場 5", "描述", "地址 5", 15, 70, "管理者 5", "777888999"));
-        mClusterManager.addItem(new MapClusterItem(new LatLng(23.699034578122333, 120.54163123632712), "停車場 6", "描述", "地址 6", 8, 40, "管理者 6", "000111222"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.69240510302933, 120.54115858531878), "停車場 1", "描述", "地址 1", 10, 30, 50, "管理者 1", "123456789"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.69589083905699, 120.52695418898324), "停車場 2", "描述", "地址 2", 5, 30,30, "管理者 2", "987654321"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.697305531011292, 120.52502299857244), "停車場 3", "描述", "地址 3", 0, 30,20, "管理者 3", "111222333"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.697619904919158, 120.52751208843522), "停車場 4", "描述", "地址 4", 20,30, 100, "管理者 4", "444555666"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.701588810386625, 120.53150321528412), "停車場 5", "描述", "地址 5", 15, 30,70, "管理者 5", "777888999"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.699034578122333, 120.54163123632712), "停車場 6", "描述", "地址 6", 8, 30,40, "管理者 6", "000111222"));
 
     }
 
@@ -265,14 +268,24 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
     }
 
     private void showParkingLotDetails(MapClusterItem item) {
-        parkingLotName.setText(item.getTitle());
-        parkingLotAddress.setText(item.getAddress());
-        parkingLotAvailable.setText(String.valueOf(item.getAvailable()));
-        parkingLotTotal.setText(String.valueOf(item.getTotal()));
-        parkingLotManagerName.setText(item.getManagerName());
-        parkingLotManagerPhone.setText(item.getManagerPhone());
+        parkingLotName.setText("Name: " + item.getTitle());
+        parkingLotAddress.setText("Address: " + item.getAddress());
+        parkingLotPrice.setText("Price: " + item.getPrice());
+        parkingLotAvailable.setText("Available: " + item.getAvailable());
+        parkingLotTotal.setText("Total: " + item.getTotal());
+        parkingLotManagerName.setText("Admin Name: " + item.getManagerName());
+        parkingLotManagerPhone.setText("Admin Phone: " + item.getManagerPhone());
 
         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED); // 只設置為 COLLAPSED
+    }
+
+
+    private void hideKeyboard() {
+        View view = getActivity().getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 
 }
