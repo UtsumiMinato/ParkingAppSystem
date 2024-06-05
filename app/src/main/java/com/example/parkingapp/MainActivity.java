@@ -16,6 +16,9 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -48,6 +51,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
+
+    private Map<Integer, String> paymentMethods = new HashMap<>();
     private Button finBtn;
     private SearchView searchView;
 
@@ -146,7 +151,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 //            Toast.makeText(this, "Button not found in layout.", Toast.LENGTH_SHORT).show();
 //        }
     }
-
+    public Map<Integer, String> getPaymentMethods() {
+        if (paymentMethods == null) {
+            paymentMethods = new LinkedHashMap<>();
+        }
+        return paymentMethods;
+    }
 
 
 //    private void filterList(String text) {

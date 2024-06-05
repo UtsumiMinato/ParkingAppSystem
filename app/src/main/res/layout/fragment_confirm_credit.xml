@@ -107,7 +107,7 @@
 
                     <!-- Card Number -->
                     <EditText
-                        android:id="@+id/editText1"
+                        android:id="@+id/cardNumberEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Card Number"
@@ -121,7 +121,7 @@
                         android:orientation="horizontal">
 
                         <EditText
-                            android:id="@+id/editText2"
+                            android:id="@+id/dateEditText"
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -161,7 +161,7 @@
                     android:text="Save card details" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/saveBtn"
                     android:layout_width="360dp"
                     android:layout_height="wrap_content"
                     android:text="Save"

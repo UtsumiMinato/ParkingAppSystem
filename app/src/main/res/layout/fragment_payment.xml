@@ -42,6 +42,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
+                android:id="@+id/paymentMethodView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -96,34 +97,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@android:color/transparent"
-                        android:drawableLeft="@drawable/visa"
-                        android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
-                        android:gravity="center_vertical"
-                        android:paddingStart="0dp"
-                        android:paddingTop="0dp"
-                        android:paddingEnd="0dp"
-                        android:paddingBottom="0dp"
-                        android:text="Visa •••• 5075"
-                        android:textColor="@color/black"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/grey" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="8dp">
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@android:color/transparent"
                         android:drawableLeft="@drawable/cash"
                         android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
                         android:gravity="center_vertical|start"
@@ -140,30 +113,28 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="@color/grey" />
-
-                <LinearLayout
+            </LinearLayout>
+            <Button
+                android:id="@+id/button_add_payment_method"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/rounded_grey_background"
+                android:padding="10dp"
+                android:layout_marginLeft="14dp"
+                android:text="+ New Payment Method"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp">
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/text_carousel_viewpager"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="8dp">
-
-                    <Button
-                        android:id="@+id/button_add_payment_method"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="7dp"
-                        android:background="@drawable/rounded_grey_background"
-                        android:padding="10dp"
-                        android:text="+ New Payment Method"
-                        android:textColor="@color/white"
-                        android:textSize="12sp" />
-
-                    <androidx.viewpager.widget.ViewPager
-                        android:id="@+id/text_carousel_viewpager"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp" />
-                </LinearLayout>
+                    android:layout_marginTop="16dp" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

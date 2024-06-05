@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp">
+    <Button
+        android:id="@+id/paymentButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@drawable/visa"
+        android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
+        android:gravity="center_vertical"
+        android:paddingStart="0dp"
+        android:paddingTop="0dp"
+        android:paddingEnd="0dp"
+        android:paddingBottom="0dp"
+        android:text="Visa •••• 5075"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+</LinearLayout>

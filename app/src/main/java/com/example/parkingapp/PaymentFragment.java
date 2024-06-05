@@ -2,6 +2,7 @@ package com.example.parkingapp;
 
 import android.os.Bundle;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
@@ -12,6 +13,10 @@ import android.view.ViewGroup;
 
 import android.os.Handler;
 import android.widget.Button;
+import android.widget.LinearLayout;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,6 +24,9 @@ import android.widget.Button;
  * create an instance of this fragment.
  */
 public class PaymentFragment extends Fragment {
+
+    private LinearLayout paymentMethodView;
+    private Map<Integer, String> paymentMethods;
     private ViewPager viewPager;
     private TextCarouselAdapter textCarouselAdapter;
 
@@ -70,9 +78,11 @@ public class PaymentFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+        paymentMethods = ((MainActivity) getActivity()).getPaymentMethods();  // 取得MAP
+
+        if (paymentMethods.isEmpty()) {
+            paymentMethods.put(R.drawable.line_pay, "LinePay");
+            paymentMethods.put(R.drawable.cash, "Cash");
         }
     }
 
@@ -81,22 +91,18 @@ public class PaymentFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_payment, container, false);
         viewPager = view.findViewById(R.id.text_carousel_viewpager);
+        paymentMethodView = view.findViewById(R.id.paymentMethodView);
+
+        initializePaymentMethodsView(); // 确保在视图创建时加载支付方式
+
         initializeViewPager();
         Button button = view.findViewById(R.id.button_add_payment_method);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment newFragment = new ConfirmCeditFragment();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-
-                // Replace whatever is in the fragment_container view with this fragment,
-                // and add the transaction to the back stack if needed
-                transaction.replace(R.id.fragment_test, newFragment);
-                transaction.addToBackStack(null);
-
-                // Commit the transaction
-                transaction.commit();
-            }
+        button.setOnClickListener(v -> {
+            Fragment newFragment = new ConfirmCeditFragment();
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_test, newFragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
         });
         return view;
     }
@@ -112,11 +118,32 @@ public class PaymentFragment extends Fragment {
     public void onResume() {
         super.onResume();
         handler.postDelayed(runnable, 3000); // Start auto-swiping
+        updatePaymentMethodsView();
     }
 
     @Override
     public void onPause() {
         super.onPause();
         handler.removeCallbacks(runnable); // Stop auto-swiping
+    }
+    private void initializePaymentMethodsView() {
+        updatePaymentMethodsView(); // 使用更新方法进行初始设置
+    }
+
+    private void updatePaymentMethodsView() {
+        paymentMethodView.removeAllViews(); // 清除所有现有视图
+        LayoutInflater inflater = LayoutInflater.from(getContext());
+        for (Map.Entry<Integer, String> entry : paymentMethods.entrySet()) {
+            View paymentView = inflater.inflate(R.layout.payment_method_item, paymentMethodView, false);
+            Button button = paymentView.findViewById(R.id.paymentButton);
+            button.setText(entry.getValue());
+            paymentMethodView.addView(paymentView);
+
+            View divider = new View(getContext());
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 1);
+            divider.setLayoutParams(layoutParams);
+            divider.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.grey));
+            paymentMethodView.addView(divider);
+        }
     }
 }
