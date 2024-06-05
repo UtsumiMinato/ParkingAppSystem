@@ -75,6 +75,22 @@ public class ConfirmCarPlateFragment extends Fragment {
         textViewResult = view.findViewById(R.id.carPlate_View);
         TextView timeEditText = view.findViewById(R.id.timeEditText);
 
+        Button payButton = view.findViewById(R.id.pay_button);
+
+        // 設置"Pay"按鈕的點擊事件監聽器
+        payButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 創建SelectCreditFragment的實例
+                SelectCreditFragment selectCreditFragment = new SelectCreditFragment();
+
+                // 替換當前Fragment為SelectCreditFragment
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_test, selectCreditFragment);
+                transaction.addToBackStack(null); // 將當前Fragment加入back stack，以便返回
+                transaction.commit();
+            }
+        });
         // 在timeEditText中最後面顯示"hr"文字並置中
         String hint = "1.5";
         String postfix = " hr";
