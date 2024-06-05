@@ -195,12 +195,12 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
     }
 
     private void addItems() {
-        mClusterManager.addItem(new MapClusterItem(new LatLng(23.69240510302933, 120.54115858531878), "Group 5 Parking Lot", "描述", "地址 1", "30/1hr",10, 50, "管理者 1", "123456789"));
-        mClusterManager.addItem(new MapClusterItem(new LatLng(23.69589083905699, 120.52695418898324), "Parking Lot_2", "描述", "地址 2", "20/1hr",5,30, "管理者 2", "987654321"));
-        mClusterManager.addItem(new MapClusterItem(new LatLng(23.697305531011292, 120.52502299857244), "Parking Lot_3", "描述", "地址 3", "10/30min",0,20, "管理者 3", "111222333"));
-        mClusterManager.addItem(new MapClusterItem(new LatLng(23.697619904919158, 120.52751208843522), "Parking Lot_4", "描述", "地址 4", "20/1hr",20,100, "管理者 4", "444555666"));
-        mClusterManager.addItem(new MapClusterItem(new LatLng(23.701588810386625, 120.53150321528412), "Parking Lot_5", "描述", "地址 5", "30/1hr",15,70, "管理者 5", "777888999"));
-        mClusterManager.addItem(new MapClusterItem(new LatLng(23.699034578122333, 120.54163123632712), "Parking Lot_6", "描述", "地址 6", "30/1hr",8,40, "管理者 6", "000111222"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.69240510302933, 120.54115858531878), "Group 5 Parking Lot", "描述", "640, Yunlin County, Douliu City, 崙峯里", "30/1hr",10, 50, "John Doe", "05-5351576"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.69589083905699, 120.52695418898324), "Parking Lot_2", "描述", "No. 600, Section 3, Daxue Rd, Douliu City, Yunlin County, 640", "20/1hr",5,30, "Jane Smith", "05-5350202"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.697305531011292, 120.52502299857244), "Parking Lot_3", "描述", "640, Yunlin County, Douliu City, 鎮西里", "10/30min",0,20, "Mike Brown", "05-5352814"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.697619904919158, 120.52751208843522), "Parking Lot_4", "描述", "640, Yunlin County, Douliu City", "20/1hr",20,100, "Mike Brown", "05-5352814"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.701588810386625, 120.53150321528412), "Parking Lot_5", "描述", "640, Yunlin County, Douliu City, 鎮西里", "30/1hr",15,70, "John Doe", "05-5351576"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.699034578122333, 120.54163123632712), "Parking Lot_6", "描述", "No. 240, Zhennan Rd, Douliu City, Yunlin County, 640", "30/1hr",8,40, "Mike Brown", "05-5352814"));
 
     }
 

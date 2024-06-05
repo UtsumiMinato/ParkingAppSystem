@@ -150,7 +150,7 @@
                 android:paddingLeft="10dp" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/pay_button"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
