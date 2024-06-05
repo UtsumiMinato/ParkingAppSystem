@@ -39,7 +39,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="99dp"
                     android:layout_marginStart="67dp"
-                    android:layout_marginEnd="106dp"
+                    android:layout_marginEnd="76dp"
                     android:gravity="center_vertical"
                     android:text="ADD CREDIT CARD"
                     android:textColor="@color/white"

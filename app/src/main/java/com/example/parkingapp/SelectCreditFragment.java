@@ -6,6 +6,8 @@ import android.os.Bundle;
 
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,6 +56,15 @@ public class SelectCreditFragment extends Fragment {
                     getActivity().finish();// 如果傳回堆疊中沒有更多條目，則結束活動
                 }
             }
+        });
+
+        Button button = view.findViewById(R.id.button_add_payment_method);
+        button.setOnClickListener(v -> {
+            Fragment newFragment = new ConfirmCeditFragment();
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_test, newFragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
         });
         return view;
     }
