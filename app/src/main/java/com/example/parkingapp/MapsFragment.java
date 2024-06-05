@@ -51,7 +51,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
     private FusedLocationProviderClient mLocationClient;
     private List<LatLng> predefinedLocations;
     private BottomSheetBehavior<View> bottomSheetBehavior;
-    private TextView parkingLotName, parkingLotAddress, parkingLotAvailable, parkingLotTotal, parkingLotManagerName, parkingLotManagerPhone;
+    private TextView parkingLotName, parkingLotAddress, parkingLotAvailable, parkingLotPrice, parkingLotTotal, parkingLotManagerName, parkingLotManagerPhone;
     private Button navigateButton;
     private LatLng currentDestination;
 
@@ -90,6 +90,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
         parkingLotName = view.findViewById(R.id.parking_lot_name);
         parkingLotAddress = view.findViewById(R.id.parking_lot_address);
         parkingLotAvailable = view.findViewById(R.id.parking_lot_available);
+        parkingLotPrice = view.findViewById(R.id.parking_lot_price);
         parkingLotTotal = view.findViewById(R.id.parking_lot_total);
         parkingLotManagerName = view.findViewById(R.id.parking_lot_manager_name);
         parkingLotManagerPhone = view.findViewById(R.id.parking_lot_manager_phone);
@@ -194,12 +195,12 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
     }
 
     private void addItems() {
-        mClusterManager.addItem(new MapClusterItem(new LatLng(23.69240510302933, 120.54115858531878), "停車場 1", "描述", "地址 1", 10,50, "管理者 1", "123456789"));
-        mClusterManager.addItem(new MapClusterItem(new LatLng(23.69589083905699, 120.52695418898324), "停車場 2", "描述", "地址 2", 5,30, "管理者 2", "987654321"));
-        mClusterManager.addItem(new MapClusterItem(new LatLng(23.697305531011292, 120.52502299857244), "停車場 3", "描述", "地址 3", 0,20, "管理者 3", "111222333"));
-        mClusterManager.addItem(new MapClusterItem(new LatLng(23.697619904919158, 120.52751208843522), "停車場 4", "描述", "地址 4", 20,100, "管理者 4", "444555666"));
-        mClusterManager.addItem(new MapClusterItem(new LatLng(23.701588810386625, 120.53150321528412), "停車場 5", "描述", "地址 5", 15,70, "管理者 5", "777888999"));
-        mClusterManager.addItem(new MapClusterItem(new LatLng(23.699034578122333, 120.54163123632712), "停車場 6", "描述", "地址 6", 8,40, "管理者 6", "000111222"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.69240510302933, 120.54115858531878), "Group 5 Parking Lot", "描述", "地址 1", "30/1hr",10, 50, "管理者 1", "123456789"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.69589083905699, 120.52695418898324), "Parking Lot_2", "描述", "地址 2", "20/1hr",5,30, "管理者 2", "987654321"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.697305531011292, 120.52502299857244), "Parking Lot_3", "描述", "地址 3", "10/30min",0,20, "管理者 3", "111222333"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.697619904919158, 120.52751208843522), "Parking Lot_4", "描述", "地址 4", "20/1hr",20,100, "管理者 4", "444555666"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.701588810386625, 120.53150321528412), "Parking Lot_5", "描述", "地址 5", "30/1hr",15,70, "管理者 5", "777888999"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.699034578122333, 120.54163123632712), "Parking Lot_6", "描述", "地址 6", "30/1hr",8,40, "管理者 6", "000111222"));
 
     }
 
@@ -299,6 +300,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
         parkingLotName.setText("Name: " + item.getTitle());
         parkingLotAddress.setText("Address: " + item.getAddress());
         parkingLotAvailable.setText("Available: " + item.getAvailable());
+        parkingLotPrice.setText("Price: " + item.getPrice());
         parkingLotTotal.setText("Total: " + item.getTotal());
         parkingLotManagerName.setText("Admin Name: " + item.getManagerName());
         parkingLotManagerPhone.setText("Admin Phone: " + item.getManagerPhone());
