@@ -52,6 +52,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
+                android:id="@+id/paymentMethodView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -65,87 +66,25 @@
                     android:textSize="30sp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/black"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:orientation="horizontal"
+                android:paddingRight="0dp"
+                android:paddingLeft="0dp"
+                android:layout_marginLeft="14dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <Button
+                    android:id="@+id/button_add_payment_method"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="8dp">
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@android:color/transparent"
-                        android:drawableLeft="@drawable/master"
-                        android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
-                        android:gravity="center_vertical"
-                        android:paddingStart="0dp"
-                        android:paddingTop="0dp"
-                        android:paddingEnd="0dp"
-                        android:paddingBottom="0dp"
-                        android:text="Master •••• 1111"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/grey" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="8dp">
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Visa •••• 5075"
-                        android:drawableLeft="@drawable/visa"
-                        android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
-                        android:textColor="@color/black"
-                        android:background="@android:color/transparent"
-                        android:paddingEnd="0dp"
-                        android:paddingStart="0dp"
-                        android:paddingTop="0dp"
-                        android:paddingBottom="0dp"
-                        android:textSize="14sp"
-                        android:gravity="center_vertical"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/grey" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/grey" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="65dp"
-                    android:orientation="horizontal"
+                    android:text="+ Add PaymentMethod"
+                    android:background="@drawable/rounded_grey_background"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
                     android:layout_marginTop="7dp"
-                    android:paddingRight="0dp"
-                    android:paddingLeft="0dp">
-
-                    <Button
-                        android:id="@+id/button_add_payment_method"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="+ Add PaymentMethod"
-                        android:background="@drawable/rounded_grey_background"
-                        android:textColor="@color/white"
-                        android:textSize="12sp"
-                        android:layout_marginTop="7dp"
-                        android:padding="6dp"/>
-                </LinearLayout>
+                    android:padding="6dp"/>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
