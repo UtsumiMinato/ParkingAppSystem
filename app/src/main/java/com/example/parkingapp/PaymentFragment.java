@@ -131,12 +131,14 @@ public class PaymentFragment extends Fragment {
     }
 
     private void updatePaymentMethodsView() {
-        paymentMethodView.removeAllViews(); // 清除所有现有视图
+        paymentMethodView.removeAllViews(); // 清除所有現有視圖
         LayoutInflater inflater = LayoutInflater.from(getContext());
         for (Map.Entry<Integer, String> entry : paymentMethods.entrySet()) {
             View paymentView = inflater.inflate(R.layout.payment_method_item, paymentMethodView, false);
             Button button = paymentView.findViewById(R.id.paymentButton);
             button.setText(entry.getValue());
+            // 動態設置按鈕的左邊圖片
+            button.setCompoundDrawablesWithIntrinsicBounds(entry.getKey(), 0, R.drawable.baseline_arrow_forward_ios_24, 0);
             paymentMethodView.addView(paymentView);
 
             View divider = new View(getContext());
