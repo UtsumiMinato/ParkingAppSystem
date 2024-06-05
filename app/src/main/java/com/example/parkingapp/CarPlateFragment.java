@@ -9,6 +9,8 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -68,6 +70,11 @@ public class CarPlateFragment extends Fragment {
         editTextFirst = view.findViewById(R.id.editTextFirst);
         editTextSecond = view.findViewById(R.id.editTextSecond);
         btnConfirm = view.findViewById(R.id.confirm_button);
+        AutoCompleteTextView autoCompleteTextView = view.findViewById(R.id.enterCarPlateAutoComplete);
+
+        String[] schools = {"05_Group 5 Parking Lot", "04_Douliu Park", "03_ParkintLot03", "02_ParkintLot02", "01_ParkintLot01"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, schools);
+        autoCompleteTextView.setAdapter(adapter);
 
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override

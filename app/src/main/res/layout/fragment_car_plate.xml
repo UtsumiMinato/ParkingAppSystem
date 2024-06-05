@@ -38,7 +38,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
-                android:id="@+id/editTextText"
+                android:id="@+id/enterMyCarPlateTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="130dp"
@@ -48,11 +48,21 @@
                 android:textSize="30dp"
                 android:textColorHint="@color/black"/>
 
+            <AutoCompleteTextView
+                android:id="@+id/enterCarPlateAutoComplete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:hint="Enter parking lot name"
+                android:completionThreshold="2"/>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:layout_gravity="center">

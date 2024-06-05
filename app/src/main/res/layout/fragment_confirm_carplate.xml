@@ -72,16 +72,6 @@
                     android:text="Group 5 Parking Lot"
                     android:textColor="@color/black"
                     android:textSize="20dp" />
-
-                <TextView
-                    android:id="@+id/textViewParkingLotID"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:maxLines="1"
-                    android:text="ID: 10"
-                    android:textColor="@color/black"
-                    android:textSize="20dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -122,6 +112,7 @@
                 android:textSize="30dp" />
 
             <EditText
+                android:id="@+id/timeEditText"
                 android:layout_width="150dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
@@ -129,7 +120,7 @@
                 android:background="@color/silver"
                 android:gravity="right|center_vertical"
                 android:paddingRight="10dp"
-                android:text="hr"
+                android:text="1.5hr"
                 android:textSize="25dp" />
 
             <TextView
@@ -148,6 +139,9 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="20dp"
                 android:background="@color/silver"
+                android:text="80"
+                android:gravity="center"
+                android:paddingRight="24dp"
                 android:drawableLeft="@drawable/baseline_attach_money_24"
                 android:paddingLeft="10dp" />
 

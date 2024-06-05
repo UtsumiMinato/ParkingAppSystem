@@ -6,6 +6,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
+import android.text.Spannable;
+import android.text.style.AlignmentSpan;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
+import android.text.style.AlignmentSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,6 +73,20 @@ public class ConfirmCarPlateFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_confirm_carplate, container, false);
         textViewResult = view.findViewById(R.id.carPlate_View);
+        TextView timeEditText = view.findViewById(R.id.timeEditText);
+
+        // 在timeEditText中最後面顯示"hr"文字並置中
+        String hint = "1.5";
+        String postfix = " hr";
+
+        SpannableStringBuilder builder = new SpannableStringBuilder();
+        builder.append(hint).append(postfix);
+        int hintStart = 0;
+        int hintEnd = hint.length();
+        AlignmentSpan span = new AlignmentSpan.Standard(Layout.Alignment.ALIGN_CENTER);
+        builder.setSpan(span, hintStart, hintEnd, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        timeEditText.setText(builder);
 
         // 從arguments取得數據
         Bundle args = getArguments();
