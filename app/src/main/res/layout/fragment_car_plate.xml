@@ -58,7 +58,7 @@
                 android:layout_gravity="center">
 
                 <EditText
-                    android:id="@+id/editTextNumber"
+                    android:id="@+id/editTextFirst"
                     android:layout_width="150dp"
                     android:layout_height="55dp"
                     android:background="#BDBABA"
@@ -76,7 +76,7 @@
                     android:layout_marginTop="25dp"/>
 
                 <EditText
-                    android:id="@+id/editTextTextAgain"
+                    android:id="@+id/editTextSecond"
                     android:layout_width="150dp"
                     android:layout_height="55dp"
                     android:background="#BDBABA"

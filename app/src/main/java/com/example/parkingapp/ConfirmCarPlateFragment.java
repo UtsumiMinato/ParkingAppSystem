@@ -9,6 +9,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Button;
 
 /**
@@ -17,6 +18,7 @@ import android.widget.Button;
  * create an instance of this fragment.
  */
 public class ConfirmCarPlateFragment extends Fragment {
+    private TextView textViewResult;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -62,23 +64,15 @@ public class ConfirmCarPlateFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_confirm_carplate, container, false);
+        textViewResult = view.findViewById(R.id.carPlate_View);
 
-        Button button = view.findViewById(R.id.pay_button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment newFragment = new ConfirmCeditFragment();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        // 從arguments取得數據
+        Bundle args = getArguments();
+        if (args != null) {
+            String data = args.getString("data");
+            textViewResult.setText(data);
+        }
 
-                // Replace whatever is in the fragment_container view with this fragment,
-                // and add the transaction to the back stack if needed
-                transaction.replace(R.id.fragment_test, newFragment);
-                transaction.addToBackStack(null);
-
-                // Commit the transaction
-                transaction.commit();
-            }
-        });
         return view;
     }
 }

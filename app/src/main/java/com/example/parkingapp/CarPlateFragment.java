@@ -1,12 +1,16 @@
 package com.example.parkingapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +18,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class CarPlateFragment extends Fragment {
+    private EditText editTextFirst, editTextSecond;
+    private Button btnConfirm;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -58,7 +64,35 @@ public class CarPlateFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_car_plate, container, false);
+        View view = inflater.inflate(R.layout.fragment_car_plate, container, false);
+        editTextFirst = view.findViewById(R.id.editTextFirst);
+        editTextSecond = view.findViewById(R.id.editTextSecond);
+        btnConfirm = view.findViewById(R.id.confirm_button);
+
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                submitData();
+            }
+        });
+
+        return view;
+    }
+
+    private void submitData() {
+        String amount = editTextFirst.getText().toString();
+        String description = editTextSecond.getText().toString();
+        String fullMessage = amount + " - " + description;
+
+        Bundle bundle = new Bundle();
+        bundle.putString("data", fullMessage);
+
+        ConfirmCarPlateFragment confirmCarPlateFragment = new ConfirmCarPlateFragment();
+        confirmCarPlateFragment.setArguments(bundle);
+
+        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_test, confirmCarPlateFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }
