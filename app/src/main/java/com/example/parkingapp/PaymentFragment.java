@@ -93,7 +93,7 @@ public class PaymentFragment extends Fragment {
         viewPager = view.findViewById(R.id.text_carousel_viewpager);
         paymentMethodView = view.findViewById(R.id.paymentMethodView);
 
-        initializePaymentMethodsView(); // 确保在视图创建时加载支付方式
+        initializePaymentMethodsView();
 
         initializeViewPager();
         Button button = view.findViewById(R.id.button_add_payment_method);
@@ -127,11 +127,11 @@ public class PaymentFragment extends Fragment {
         handler.removeCallbacks(runnable); // Stop auto-swiping
     }
     private void initializePaymentMethodsView() {
-        updatePaymentMethodsView(); // 使用更新方法进行初始设置
+        updatePaymentMethodsView();
     }
 
     private void updatePaymentMethodsView() {
-        paymentMethodView.removeAllViews(); // 清除所有現有視圖
+        paymentMethodView.removeAllViews(); // 清除所有現有頁面
         LayoutInflater inflater = LayoutInflater.from(getContext());
         for (Map.Entry<Integer, String> entry : paymentMethods.entrySet()) {
             View paymentView = inflater.inflate(R.layout.payment_method_item, paymentMethodView, false);

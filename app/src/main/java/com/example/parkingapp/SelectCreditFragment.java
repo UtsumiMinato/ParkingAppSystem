@@ -33,7 +33,6 @@ public class SelectCreditFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // 获取共享的支付方式数据
         paymentMethods = ((MainActivity) getActivity()).getPaymentMethods();
     }
 
@@ -41,19 +40,32 @@ public class SelectCreditFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_select_credit, container, false);
-        paymentMethodView = view.findViewById(R.id.paymentMethodView); // 确保这行代码无误
+        paymentMethodView = view.findViewById(R.id.paymentMethodView);
         updatePaymentMethodsView(); // 更新UI
+
+        Button backButton = view.findViewById(R.id.back_button);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 檢查該片段是否可以從返回堆疊中彈出
+                if (getFragmentManager() != null && getFragmentManager().getBackStackEntryCount() > 0) {
+                    getFragmentManager().popBackStack();// 將頂部狀態從返回堆疊中彈出
+                } else if (getActivity() != null) {
+                    getActivity().finish();// 如果傳回堆疊中沒有更多條目，則結束活動
+                }
+            }
+        });
         return view;
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        updatePaymentMethodsView(); // 确保每次 Fragment 可见时都刷新数据
+        updatePaymentMethodsView();
     }
 
     private void updatePaymentMethodsView() {
-        paymentMethodView.removeAllViews(); // 清除所有現有視圖
+        paymentMethodView.removeAllViews(); // 清除所有現有頁面
         LayoutInflater inflater = LayoutInflater.from(getContext());
         for (Map.Entry<Integer, String> entry : paymentMethods.entrySet()) {
             View paymentView = inflater.inflate(R.layout.payment_method_item, paymentMethodView, false);

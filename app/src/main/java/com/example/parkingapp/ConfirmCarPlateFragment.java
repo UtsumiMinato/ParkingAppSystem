@@ -75,6 +75,19 @@ public class ConfirmCarPlateFragment extends Fragment {
         textViewResult = view.findViewById(R.id.carPlate_View);
         TextView timeEditText = view.findViewById(R.id.timeEditText);
 
+        Button backButton = view.findViewById(R.id.back_button);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 檢查該片段是否可以從返回堆疊中彈出
+                if (getFragmentManager() != null && getFragmentManager().getBackStackEntryCount() > 0) {
+                    getFragmentManager().popBackStack();// 將頂部狀態從返回堆疊中彈出
+                } else if (getActivity() != null) {
+                    getActivity().finish();// 如果傳回堆疊中沒有更多條目，則結束活動
+                }
+            }
+        });
+
         Button payButton = view.findViewById(R.id.pay_button);
 
         // 設置"Pay"按鈕的點擊事件監聽器

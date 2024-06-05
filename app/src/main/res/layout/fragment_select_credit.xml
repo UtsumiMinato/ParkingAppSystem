@@ -24,21 +24,22 @@
                 android:layout_height="match_parent"
                 android:background="@color/material_grey_900">
 
-                <ImageView
-                    android:id="@+id/imageView"
+                <Button
+                    android:id="@+id/back_button"
                     android:layout_width="58dp"
                     android:layout_height="38dp"
+                    android:background="@android:color/transparent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/baseline_arrow_back_ios_new_24" />
+                    android:drawableLeft="@drawable/baseline_arrow_back_ios_new_24"/>
 
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="99dp"
                     android:layout_marginStart="67dp"
-                    android:layout_marginEnd="106dp"
+                    android:layout_marginEnd="152dp"
                     android:gravity="center_vertical"
                     android:text="SELECT"
                     android:textColor="@color/white"
@@ -48,7 +49,7 @@
                     app:layout_constraintHorizontal_bias="0.364"
                     app:layout_constraintStart_toEndOf="@+id/imageView"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintVertical_bias="1.0" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
