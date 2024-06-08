@@ -72,7 +72,7 @@ public class CarPlateFragment extends Fragment {
         btnConfirm = view.findViewById(R.id.confirm_button);
         AutoCompleteTextView autoCompleteTextView = view.findViewById(R.id.enterCarPlateAutoComplete);
 
-        String[] schools = {"05_Group 5 Parking Lot", "04_Parking Lot_4", "03_Parking Lot_3", "02_Parking Lot_2", "01_Parking Lot_1"};
+        String[] schools = {"Group 5 Parking Lot", "04_Parking Lot_4", "03_Parking Lot_3", "02_Parking Lot_2", "01_Parking Lot_1"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, schools);
         autoCompleteTextView.setAdapter(adapter);
 

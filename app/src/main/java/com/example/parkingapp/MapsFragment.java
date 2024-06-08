@@ -153,6 +153,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
         mMap.getUiSettings().setZoomControlsEnabled(true);
         mMap.getUiSettings().setZoomGesturesEnabled(true);
         mMap.getUiSettings().setRotateGesturesEnabled(true);
+        mMap.getUiSettings().setMyLocationButtonEnabled(false);
         checkLocationPermission();
 
         mMap.setOnMarkerClickListener(marker -> {
@@ -195,12 +196,19 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
     }
 
     private void addItems() {
-        mClusterManager.addItem(new MapClusterItem(new LatLng(23.69240510302933, 120.54115858531878), "Group 5 Parking Lot", "描述", "640, Yunlin County, Douliu City, 崙峯里", "30/1hr",10, 50, "John Doe", "05-5351576"));
-        mClusterManager.addItem(new MapClusterItem(new LatLng(23.69589083905699, 120.52695418898324), "Parking Lot_2", "描述", "No. 600, Section 3, Daxue Rd, Douliu City, Yunlin County, 640", "20/1hr",5,30, "Jane Smith", "05-5350202"));
-        mClusterManager.addItem(new MapClusterItem(new LatLng(23.697305531011292, 120.52502299857244), "Parking Lot_3", "描述", "640, Yunlin County, Douliu City, 鎮西里", "10/30min",0,20, "Mike Brown", "05-5352814"));
-        mClusterManager.addItem(new MapClusterItem(new LatLng(23.697619904919158, 120.52751208843522), "Parking Lot_4", "描述", "640, Yunlin County, Douliu City", "20/1hr",20,100, "Mike Brown", "05-5352814"));
-        mClusterManager.addItem(new MapClusterItem(new LatLng(23.701588810386625, 120.53150321528412), "Parking Lot_5", "描述", "640, Yunlin County, Douliu City, 鎮西里", "30/1hr",15,70, "John Doe", "05-5351576"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.69240510302933, 120.54115858531878), "Group 5 Parking Lot", "描述", "No. 353, Zhuangjing Rd, Douliu City, Yunlin County, 640", "30/1hr",10, 50, "John Doe", "05-5351576,0968739743"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.69589083905699, 120.52695418898324), "Parking Lot_2", "描述", "No. 600, Section 3, Daxue Rd, Douliu City, Yunlin County, 640", "20/1hr",5,30, "Jane Smith", "05-5350202,0968794740"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.697305531011292, 120.52502299857244), "Parking Lot_3", "描述", "No. 19, Section 2, Yunlin Rd, Douliu City, Yunlin County, 640", "10/30min",0,20, "Jane Smith", "05-5350202,0968794740"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.697619904919158, 120.52751208843522), "Parking Lot_4", "描述", "No. 297, Section 2, Yunlin Rd, Douliu City, Yunlin County, 640", "20/1hr",20,100, "Mike Brown", "05-5352814, 0968848974"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.701588810386625, 120.53150321528412), "Central Parking", "描述", "No. 60, Baozhang Rd, Douliu City, Yunlin County, 64058", "30/1hr",15,150, "John Doe", "05-5351576,0968739743"));
         mClusterManager.addItem(new MapClusterItem(new LatLng(23.699034578122333, 120.54163123632712), "Parking Lot_6", "描述", "No. 240, Zhennan Rd, Douliu City, Yunlin County, 640", "30/1hr",8,40, "Mike Brown", "05-5352814"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.68821243409715, 120.51725212857887), "Parking Lot_7", "Description", "Some address, Douliu City, Yunlin County", "15/30min",5,25, "Person A", "05-5300000"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.701416406041318, 120.51399056253165), "Parking Lot_8", "Description", "Another address, Douliu City, Yunlin County", "25/1hr",10,50, "Person B", "05-5300001"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.709432451668924, 120.51210228745167), "Parking Lot_9", "Description", "Additional address, Douliu City, Yunlin County", "20/1hr",15,60, "Person C", "05-5300002"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.707467780160165, 120.55184189481669), "Parking Lot_10", "Description", "More address, Douliu City, Yunlin County", "30/1hr",20,80, "Person D", "05-5300003"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.715479970501605, 120.54847620233127), "Parking Lot_11", "Description", "Different address, Douliu City, Yunlin County", "10/30min",0,30, "Person E", "05-5300004"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.71501271457807, 120.53877950845772), "Parking Lot_12", "Description", "Distinct address, Douliu City, Yunlin County", "35/1hr",25,100, "Person F", "05-5300005"));
+        mClusterManager.addItem(new MapClusterItem(new LatLng(23.704661266738068, 120.5502080309321), "Parking Lot_13", "Description", "Specific address, Douliu City, Yunlin County", "40/1hr",30,120, "Person G", "05-5300006"));
 
     }
 
