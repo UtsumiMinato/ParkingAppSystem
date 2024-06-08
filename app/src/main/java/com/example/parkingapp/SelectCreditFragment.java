@@ -86,11 +86,28 @@ public class SelectCreditFragment extends Fragment {
             button.setCompoundDrawablesWithIntrinsicBounds(entry.getKey(), 0, R.drawable.baseline_arrow_forward_ios_24, 0);
             paymentMethodView.addView(paymentView);
 
+            if ("Cash".equals(entry.getValue())) {
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        switchToNextFragment();
+                    }
+                });
+            }
+
             View divider = new View(getContext());
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 1);
             divider.setLayoutParams(layoutParams);
             divider.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.grey));
             paymentMethodView.addView(divider);
         }
+    }
+
+    private void switchToNextFragment() {
+        Fragment nextFragment = new PayCashFragment();  // 替换为你的目标 Fragment
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_test, nextFragment); // 确保 R.id.fragment_container 是你的容器 ID
+        transaction.addToBackStack(null);  // 如果你想支持后退键返回前一个页面
+        transaction.commit();
     }
 }
