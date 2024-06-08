@@ -81,7 +81,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="40dp"
                 android:layout_weight="0.5"
-                android:background="@color/silver">
+                android:background="@color/silver"
+                android:focusableInTouchMode="false">
 
                 <TextView
                     android:id="@+id/carPlate_View"
@@ -92,7 +93,7 @@
                     android:text="ABC-1234"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
 
             </LinearLayout>
 
@@ -122,7 +123,11 @@
                 android:gravity="right|center_vertical"
                 android:paddingRight="10dp"
                 android:text="1.5hr"
-                android:textSize="25dp" />
+                android:textSize="25dp"
+                android:focusableInTouchMode="false"
+                android:clickable="false"
+                android:focusable="false"
+                android:editable="false"/>
 
             <TextView
                 android:id="@+id/textViewParkingMoney1"
@@ -144,7 +149,11 @@
                 android:gravity="center"
                 android:paddingRight="24dp"
                 android:drawableLeft="@drawable/baseline_attach_money_24"
-                android:paddingLeft="10dp" />
+                android:paddingLeft="10dp"
+                android:focusableInTouchMode="false"
+                android:clickable="false"
+                android:focusable="false"
+                android:editable="false"/>
 
             <Button
                 android:id="@+id/pay_button"
