@@ -158,6 +158,17 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         return paymentMethods;
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        showGreeting();
+    }
+
+    private void showGreeting() {
+        Greetings greetings = new Greetings();
+        Toast.makeText(this, greetings.generalGreeting(), Toast.LENGTH_LONG).show();
+    }
+
 
 //    private void filterList(String text) {
 //        List<Item> filteredList = new ArrayList<>();
