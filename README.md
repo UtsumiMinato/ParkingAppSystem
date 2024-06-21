@@ -40,6 +40,4 @@
 ### 導航選單：
 - [x] 重構
 
-# Doc
-[設計文件(GoogleDrive)](https://drive.google.com/drive/u/0/folders/1h7oyX7zoQUEdj2BjrMnvnXOv2f72EZNh)  
 
